@@ -1,0 +1,11 @@
+//enable the user and then set a password to get around "password is set to expire"
+Enable-LocalUser("administrator") | net user administrator *ENTER PASSWORD*
+
+//ensure the user is enabled
+(get-localuser 'administrator).enabled
+
+//disable the local administrator
+disable-localuser("administrator")
+
+
+
